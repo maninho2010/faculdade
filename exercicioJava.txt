@@ -1,0 +1,320 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class fac {
+
+    public static void main(String[] args) {
+
+        //questao01();
+        //questao02();
+        //questao03();
+        //questao04();
+        //questao05();
+        //questao06();
+        //questao07();
+        //questao08();
+        questao09();
+
+    }
+
+    public static void questao01() {
+        float salarioAntigo = 0;
+        float salarioNovo = 0;
+        float porcentagemAumento = 0;
+        float valorAumento = 0;
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(" - QUESTAO 01 -----------------//");
+
+        System.out.print("Salario antigo: ");
+        salarioAntigo = scan.nextFloat();
+
+        System.out.print("Informe a porcentagem do aumento: ");
+        porcentagemAumento = scan.nextFloat();
+        scan.close();
+
+        valorAumento = (porcentagemAumento / 100) * salarioAntigo;
+        System.out.println("Valor do aumento: " + valorAumento);
+
+        salarioNovo = salarioAntigo + valorAumento;
+        System.out.println("Seu novo salario: " + salarioNovo);
+    }
+
+    public static void questao02() {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(" - QUESTAO 02 -----------------//");
+
+        for (int i = 0; i < 10; i++) {
+
+            System.out.print((i + 1) + "° Numero inteiro: ");
+            if (scan.nextInt() % 2 == 0) {
+                System.out.println("E PAR");
+            } else {
+                System.out.println("E IMPAR");
+            }
+
+        }
+
+    }
+
+    public static void questao03() {
+
+        int tabuadaEscolhida = 0;
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(" - QUESTAO 03 -----------------//");
+        System.out.print("Escolha uma tabuada: ");
+        tabuadaEscolhida = scan.nextInt();
+
+        System.out.println("TABUADA DO: " + tabuadaEscolhida);
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i + "x" + tabuadaEscolhida + " = " + (i * tabuadaEscolhida));
+        }
+    }
+
+    public static void questao04() {
+
+        String nome = "";
+        float salario = 0;
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(" - QUESTAO 04 -----------------//");
+        while (true) {
+            System.out.println("[ Digite 'fim' no nome para encerrar ]");
+            System.out.print("Qual o seu nome: ");
+            nome = scan.nextLine();
+
+            if (nome.equals("fim")) {
+                break;
+            }
+
+            System.out.print("Qual seu salario: ");
+            salario = Float.parseFloat(scan.nextLine());
+
+            if (salario < 500) {
+
+                salario = (float) (salario + ((20.0 / 100) * salario));
+                System.out.println("Voce recebeu um aumento! Seu novo salario e: " + salario);
+            } else {
+                System.out.println("Infelizmente voce nao recebera um aumento!");
+            }
+        }
+
+    }
+
+    public static void questao05() {
+
+        float total = 0;
+        float precoRefrigerante = 3.0F;
+        float precoLitroGasolina = 2.50F;
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println(" - QUESTAO 05 -----------------//");
+
+        System.out.println("Voce pegou 2x refrigerantes");
+        total += 2 * precoRefrigerante;
+        System.out.println("Por enquanto, Total: " + total + "$");
+
+        System.out.println("Abastacimento de carro");
+        System.out.print("Total de litros: ");
+        total += scan.nextFloat() * precoLitroGasolina;
+        System.out.println("Carro reabastecido!");
+        System.out.println("TOTAL: " + total + "$");
+
+    }
+
+    public static void questao06() {
+
+        float salario = 0;
+        float emprestimo = 0;
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println(" - QUESTAO 06 -----------------//");
+
+        System.out.print("Informe seu salario: ");
+        salario = scan.nextFloat();
+
+        System.out.print("Informe o valor do emprestimo: ");
+        emprestimo = scan.nextFloat();
+
+        if (emprestimo < (salario * 0.30)) {
+            System.out.println("Emprestimo pode ser realizado!");
+        } else {
+            System.out.println("Desculpe, emprestimo corresponde a " + emprestimo * 100.0 / salario + "% da sua renda.");
+        }
+
+    }
+
+    public static void questao07() {
+
+        String[] nomes = new String[6];
+        float[][] notas = new float[6][2];
+        float[] mediaAluno = new float[6];
+        float mediaClasse = 0;
+        int totalAprovados = 0;
+        int totalReprovados = 0;
+        int totalExame = 0;
+        
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(" - QUESTAO 07 -----------------//");
+        //COLETA OS DADOS
+        for (int i = 0; i < nomes.length; i++) {
+            System.out.println((i + 1) + "° Aluno insira o que for pedido");
+            System.out.print("Nome: ");
+            nomes[i] = scan.nextLine();
+            System.out.print("Nota 1: ");
+            notas[i][0] = Float.parseFloat(scan.nextLine());
+            System.out.print("Nota 2: ");
+            notas[i][1] = Float.parseFloat(scan.nextLine());
+
+            mediaAluno[i] = (notas[i][0] + notas[i][1]) / 2F;
+            
+            mediaClasse += mediaAluno[i];
+        }
+        mediaClasse /= nomes.length;
+
+        //IMPRIME O RESULTADO DE CADA ALUNO
+        for (int i = 0; i < nomes.length; i++) {
+            System.out.println("------Resultado, aluno: " + nomes[i]);
+            System.out.println("Media: " + mediaAluno[i]);
+            
+            if (mediaAluno[i] < 3) {
+                totalReprovados += 1;
+                System.out.println("Reprovado!");
+            } else if (mediaAluno[i] >= 3 && mediaAluno[i] <= 7) {
+                totalExame += 1;
+                System.out.println("Exame!");
+            } else {
+                totalAprovados += 1;
+                System.out.println("Aprovado");
+            }
+        }
+        
+        // IMPRIME O RESULTADO GERAL
+        System.out.println("Total de alunos aprovados: "+ totalAprovados);
+        System.out.println("Total de alunos reprovados: "+ totalReprovados);
+        System.out.println("Total de alunos de exame: "+ totalExame);
+        System.out.println("MEDIA DA CLASSE: "+ mediaClasse);
+
+    }
+    
+    public static void questao08(){
+        List<String> nomes = new ArrayList();
+        List<Float> contas = new ArrayList();
+        float conta = 0;
+        int qtDias = 0;
+        float totalArrecadado = 0;
+        String continuar = "";
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println(" - QUESTAO 08 -----------------//");
+        
+        // COLETAR OS DADOS DOS CLIENTES
+        do{
+            System.out.print("Nome do cliente: ");
+            nomes.add(scan.nextLine());
+            System.out.print("Quantidade de dias na pousada: ");
+            qtDias = Integer.parseInt(scan.nextLine());
+            conta = conta + (40 * qtDias); // valor minimo da pousada
+            // adicao da taxa diaria
+            if(qtDias < 10){
+                conta = conta + (15 * qtDias); // valor da taxa diaria eh 15
+            } else{
+                conta = conta + (8 * qtDias); // valor da taxa diaria eh 8
+            }
+            contas.add(conta);
+            
+            System.out.println("Digite 'fim' para sair ou pressione <ENTER> para adicionar mais: ");
+            continuar = scan.nextLine();
+        }while(!continuar.equals("fim"));
+        
+        //IMPRIMIR DADOS DE CADA CLIENTE
+        for(int i = 0; i < nomes.size(); i++){
+            System.out.println("Nome: "+ nomes.get(i));
+            System.out.println("Conta: "+ contas.get(i));
+            totalArrecadado += contas.get(i);
+        }
+        System.out.println("TOTAL ARRECADADO: "+ totalArrecadado);
+        
+    }
+    
+    // seria muito mais facil com OO, mas kero colocar tudo nesse arquivo
+    public static void questao09(){
+        List<String> nomes = new ArrayList();
+        List<Character> sexo = new ArrayList(); // usaria Enum, mas quero mandar tudo nesse arquivo
+        List<Float> peso = new ArrayList();
+        List<Integer> idade = new ArrayList();
+        List<Float> altura = new ArrayList();
+        int qtPacientes = 0;
+        int qtHomens = 0;
+        int qtMulheres = 0;
+        int mediaIdadeHomens = 0;
+        int qtMulheresEspecias = 0; // mulheres com altura entre 1,60 e 1,70 e peso acima de 70kg.
+        int qtPessoasIdadeEntre18a25 = 0;
+        String nomePacienteMaisVelho = "";
+        int idadePacienteMaisVelho = 0;
+        String nomeMulherMaisBaixa = "";
+        float alturaMulherMaisBaixa = 0;
+        String continuar = "";
+        Scanner scan = new Scanner(System.in);
+        
+        //COLETA OS DADOS
+        do{
+            System.out.print("Nome do cliente: ");
+            nomes.add(scan.nextLine());
+            System.out.print("Sexo [M/F]: ");
+            sexo.add(scan.nextLine().charAt(0));
+            System.out.print("Peso: ");
+            peso.add(Float.parseFloat(scan.nextLine()));
+            System.out.print("Idade: ");
+            idade.add(Integer.parseInt(scan.nextLine()));
+            System.out.print("Altura: ");
+            altura.add(Float.parseFloat(scan.nextLine()));
+            
+            System.out.println("Digite 'fim' para sair ou pressione <ENTER> para adicionar mais: ");
+            continuar = scan.nextLine();
+        }while(!continuar.equals("fim"));
+        scan.close();
+        
+        //APLICA A LOGICA DE AGRUPAMENTOS
+        qtPacientes = nomes.size();
+        for(int i = 0; i < nomes.size(); i++){
+            if(sexo.get(i) == 'M'){
+                ++qtHomens;
+                mediaIdadeHomens += idade.get(i);
+                
+            } else if(sexo.get(i) == 'F'){
+                 ++qtMulheres;
+                 if(altura.get(i) >= 1.60F && altura.get(i) <= 1.70F && peso.get(i) > 70F){
+                     ++qtMulheresEspecias;
+                 } 
+            }
+            
+            if(idade.get(i) >= 18 && idade.get(i) <= 25){
+                ++qtPessoasIdadeEntre18a25;
+            }
+        }
+        mediaIdadeHomens /= qtHomens;
+        
+        //PRINTA OS DADOS
+        System.out.println("-- TABELA DE CLINTES\n");
+        for(int i = 0; i < nomes.size(); i++){
+            System.out.println("Nome: "+ nomes.get(i));
+            System.out.println("Sexo: "+ sexo.get(i));
+            System.out.println("Peso: "+ peso.get(i));
+            System.out.println("Idade: "+ idade.get(i));
+            System.out.println("Altura: "+ altura.get(i));
+            System.out.println("Qt. de homens: "+ qtHomens);
+            System.out.println("Qt. de mulheres: "+ qtMulheres);
+            System.out.println(" --- --- --- ---//");
+        }
+        System.out.println("Casos especias:");
+        System.out.println("Qt. de mulheres com altura entre 1,60 e 1,70 e peso acima de 70kg: "+qtMulheresEspecias);
+        System.out.println("Qt. de pessoas com idade entre 18 e 25: "+ qtPessoasIdadeEntre18a25);
+        
+    }
+}
