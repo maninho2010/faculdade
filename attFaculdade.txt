@@ -1,0 +1,176 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		int array[] = new int[300];
+		
+		
+		// -- Questao 01
+		for(int i = 0; i < array.length; i++){
+			array[i] = 45;
+		}
+		
+		// -- Questao 02
+		System.out.println("FOR: ");
+		for(int i = 0; i < array.length; i++){
+			System.out.println("array["+i+"] == " + array[i]);
+		}
+		System.out.println("FOREACH: ");
+		for(int elemento : array){
+			System.out.println(elemento);
+		}
+		System.out.println("DO WHILE: ");
+		int contador = 0;
+		do{
+			System.out.println("array["+contador+"] == " + array[contador]);
+			contador++;
+		}while(contador < array.length);
+		
+		
+		// -- Questao 03	
+		int array2[] = new int[10];
+		Scanner scan = new Scanner(System.in);
+		
+		// pegar dados
+		for(int i = 0; i < array2.length; i++){
+			System.out.print("Insira o valor da posicao " + i + ": ");
+			array2[i] = Integer.parseInt( scan.nextLine() ); // pra nao "bugar" o scanner
+		}
+		
+		// ordenar dados
+		ordenarInteiros(array2);
+		System.out.println("Array ordenado: ");
+		imprimirArrayInt(array2);
+		
+		// busca
+		System.out.println("Elemento para buscar no array: ");
+		int elemento = Integer.parseInt( scan.nextLine() );
+		int posDoElemento = buscarInteiroNoArray(array2, elemento);
+		
+		if(posDoElemento == -1) {
+			System.out.println("Elemento " + elemento + " nao existe no array.");
+		} else {
+			System.out.println("O elemento " + elemento + " se encontra na posicao " + posDoElemento + ".");
+		}
+		
+		
+		// -- Questao 3
+		
+		String arrayNomes[] = new String[10];
+		
+		// pegar dados
+		for(int i = 0; i < arrayNomes.length; i++) {
+			System.out.print("Informe o nome["+i+"]: ");
+			arrayNomes[i] = scan.nextLine();
+		}
+		
+		// ordernar dados
+		ordenarArrayStr(arrayNomes);
+		
+		// imprimir dados
+		imprimirArrayStr(arrayNomes);
+		
+		
+		// Questao  05
+		
+		// coletar dados
+		int array3[] = new int[10];
+		for(int i = 0; i < array3.length; i++) {
+			System.out.print("Informe um inteiro, array["+i+"] :");
+			array3[i] = Integer.parseInt( scan.nextLine() );
+		}
+		
+		// ordenar dados
+		ordenarInteiros(array3);
+		
+		// imprimir dados
+		System.out.println("Array ordenado: ");
+		imprimirArrayInt(array3);
+		
+		
+	}
+	
+	/**
+	 * Ordena um alfabeticamente um array de String
+	 * 
+	 * @param array ja deve ter sido inicializado
+	 */
+	public static void ordenarArrayStr(String[] array) {
+		
+		String aux = "";
+		for(int i = 0; i < array.length; i++) {
+			for(int j = 0; j < array.length; j++) {
+				if(array[i].compareTo(array[j]) < 0) {
+					aux = array[i];
+					array[i] = array[j];
+					array[j] = aux;
+				}
+			}
+		}
+		
+	}
+	
+	/**
+	 * Ordena um array de inteiros de forma crescente
+	 * 
+	 * @param array de inteiros, ja deve ter sido inicializado
+	 */
+	public static void ordenarInteiros(int[] array){
+		
+		int aux = 0;
+		for(int i = 0; i < array.length; i++){
+			for(int j = 0; j < array.length; j++){
+				
+				if(array[i] < array[j]){
+					aux = array[i];
+					array[i] = array[j];
+					array[j] = aux;
+				}
+				
+			}
+		}
+	}
+	
+	/**
+	 * Busca um elemento em um array de inteiros
+	 * 
+	 * @param array de inteiros, ja deve ter sido inicializado
+	 * @param elemento a ser buscado no array
+	 * @return a posicao do elemento no array ou -1 se caso nao existir
+	 */
+	public static int buscarInteiroNoArray(int[] array, int elemento){
+		
+		for(int i = 0; i < array.length; i++){
+			if(array[i] == elemento){
+				return i;
+			}
+		}
+		
+		return -1;
+	}
+	
+	/**
+	 * Imprime a posicao e o valor de cada elemento no array
+	 * 
+	 * @param array de inteiros, ja deve ter sido inicializado
+	 */
+	public static void imprimirArrayInt(int[] array) {
+		for(int i = 0; i < array.length; i++){
+			System.out.println("array["+i+"] == " + array[i]);
+		}
+	}
+	
+	/**
+	 * Imprime a posicao e o valor de cada elemento no array
+	 * 
+	 * @param array de String, ja deve ter sido inicializado
+	 */
+	public static void imprimirArrayStr(String[] array) {
+		for(int i = 0; i < array.length; i++){
+			System.out.println("array["+i+"] == " + array[i]);
+		}
+	}
+	
+	
+}
