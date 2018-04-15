@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class Parceiro {
+	private String cnpj;
+	private String nome;
+	private String senha;
+	private String endereco;
+	private String email;
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void cadastrar(Parceiro parceiro) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Cadastro\n");
+		System.out.print("Nome: ");
+		parceiro.setNome(scan.nextLine());
+
+		System.out.print("Email: ");
+		parceiro.setEmail(scan.nextLine());
+
+		System.out.print("Cnpj: ");
+		parceiro.setCnpj(scan.nextLine());
+
+		System.out.print("Endereco: ");
+		parceiro.setEndereco(scan.nextLine());
+
+		System.out.print("Informe uma senha: ");
+		parceiro.setSenha(scan.nextLine());
+
+	}
+
+	public void imprimirDados() {
+
+		System.out.println("Seus dados:\n");
+		System.out.println("Nome: " + this.nome);
+		System.out.println("Email: " + this.email);
+		System.out.println("Cnpj: " + this.cnpj);
+		System.out.println("Endereco: " + this.endereco);
+		System.out.println("Senha: " + this.senha); // talvez seja sigiloso
+
+	}
+
+}
