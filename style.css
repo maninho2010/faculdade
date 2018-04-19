@@ -1,0 +1,18 @@
+img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.list-group-item{
+	display: flex;
+}
+
+.desc{
+	padding-left: 25px;
+}
+
+.avatar{
+	display: flex;
+	align-items: center;
+}
