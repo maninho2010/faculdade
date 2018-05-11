@@ -1,0 +1,32 @@
+.banner{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	background: url("../images/index/banner.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.banner h1{
+	color: white;
+	text-align: center;
+}
+
+.banner #group{
+	margin-top: 30px;
+}
+
+/* Como funciona */
+section.how-it-works{
+	color: dimgray;
+	background-color: #f1f1f1;
+	overflow: hidden;
+}
+.h2{
+	margin: 50px 0px;
+	text-align: center;
+	font-size: 1.8em;
+}

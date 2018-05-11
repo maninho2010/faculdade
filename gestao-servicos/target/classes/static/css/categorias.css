@@ -1,0 +1,11 @@
+.card-img-top{
+	max-height: 140px;
+}
+
+.card{
+	max-width: 250px;
+}
+
+.h2{
+	color: dimgrey;
+}
