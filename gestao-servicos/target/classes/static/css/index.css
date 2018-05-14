@@ -1,3 +1,7 @@
+body{
+	background-color: #f1f1f1;
+}
+
 .banner{
 
 	display: flex;
@@ -20,13 +24,23 @@
 }
 
 /* Como funciona */
-section.how-it-works{
+#como-funciona{
+	padding-top: 50px;
+	padding-bottom: 50px;
 	color: dimgray;
 	background-color: #f1f1f1;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
-.h2{
-	margin: 50px 0px;
+
+.btn-row{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#como-funciona .h2{
+	color: #444;
 	text-align: center;
+	margin-bottom: 50px;
 	font-size: 1.8em;
 }

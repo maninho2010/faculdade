@@ -12,19 +12,42 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script defer="" src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     <link rel="stylesheet" th:href="@{/css/trabalhador-detalhes.css}" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" />
 </head>
 <body>
     <th:block th:replace="fragments/navigation :: navbar"/>
 
     <main class="container">
-        <div class="row">
-            <div class="form-group col-sm-s4">
-                <img id="avatar" th:src="@{/images/trabalhadores/avatar-1.jpg}" alt="avatar" class="img-thumbnail"/>
+        <div class="row mt-5">
+            <div class="avatar-box col-sm-3">
+                <img id="avatar" src="avatar-1.jpg" th:src="@{/images/trabalhadores/avatar-1.jpg}" alt="avatar" class="img-thumbnail"/>
             </div>
-            <h2 class="ml-2" th:text="${trabalhador.nome}"></h2>
+			<div class="col-sm-3">
+				<div class="dado p-2">
+					<h6>Nome</h6>
+					<h5 th:text="${trabalhador.nome}">Emanuel Honorio</h5>
+				</div>
+				<div class="dado p-2">
+					<h6>Categoria</h6>
+					<h5 th:text="${trabalhador.categoria.nome}">Programador</h5>
+				</div>
+
+			</div>
+			<div class="col-sm-s3">
+				<div class="contato p-1">
+					<i class="fas fa-phone"></i>
+					<span class="mx-2" th:text="${trabalhador.telefone}">(83)987-313692</span>
+				</div>
+				<div class="contato p-1">
+					<i class="fas fa-at"></i>
+					<span class="mx-2" th:text="${trabalhador.email}">emanueljp@gmail.com</span>
+				</div>
+			</div>
         </div>
         
     </main>
+
+    <th:block th:replace="fragments/footer :: footer"/>
 
 </body>
 </html>
