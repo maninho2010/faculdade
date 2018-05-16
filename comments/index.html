@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Comments Layout</title>
+  </head>
+  <body>
+    
+    <section id="section-fazer-comentario" class="container mt-5">
+    	<form action="/comentario" method="POST">
+			<div class="d-flex align-items-center col-md-7 pl-0">
+				<a href="#">
+					<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+				</a>
+				<textarea class="form-control" placeholder="mensagem..."></textarea>
+				<button type="submit" class="btn btn-primary ml-2">Enviar</button>
+			</div>
+		</form>
+	</section>
+ 	
+  	<section id="section-comentarios" class="container mt-5">
+		<div class="d-flex align-items-center py-3">
+			<a href="#">
+				<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+			</a>
+			<div>
+				<a href="#">Emanuel Honorio</a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, sapiente!</p>
+				<div class="container-responder">
+					<a href="#" class="btn-responder">Responder</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+ 	</section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    
+    <script>
+	 	
+		$(function(){
+			var containerResponder = $(".container-responder");
+			var btnResponder = containerResponder.find(".btn-responder");
+			var htmlContainerReponder = containerResponder.html();
+			var form='<form action="/comentarios/responder/1" method="post"></form>';
+			
+			var htmlTextArea = '<textarea class="form-control" placeholder="mensagem..."></textarea>';
+			var htmlBtns = '<a href="#">Enviar</a> <a href="#">Cancelar</a>';
+			btnResponder.on('click', function(){
+				btnResponder.addClass('hidden');
+				containerResponder.append(htmlTextArea);
+				containerResponder.append(htmlBtns);
+			});
+		});
+	  
+	 </script>
+    
+  </body>
+</html>
