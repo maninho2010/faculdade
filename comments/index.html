@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" />
     
     <link rel="stylesheet" href="style.css" />
 
@@ -27,43 +28,185 @@
 	</section>
  	
   	<section id="section-comentarios" class="container mt-5">
-		<div class="d-flex align-items-center py-3">
+  	
+  		<!-- COMMMENT -->
+		<div class="d-flex my-5">
+			<a href="#">
+				<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+			</a>
+			<div>
+				<a href="#" class="nome-autor">Emanuel Honorio</a>
+				<p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nemo saepe ea, nisi natus, provident eaque. Eum odit impedit harum quia, laborum ipsa tenetur error sit, illo labore atque! Enim.</p>
+				<a href="#" class="btn-responder">Responder</a>
+				<div class="my-2 btn-view-more-comments">
+					<a href="#"><span>Mostrar todas as respostas</span> <i class="fas fa-caret-down"></i></a>
+				</div>
+				
+				<!-- RESPOSTAS -->
+				<div class="container container-respostas hidden">
+	
+					<div class="d-flex ml-3">
+						<a href="#">
+							<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+						</a>
+						<div>
+							<a href="#">Emanuel Honorio</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nemo saepe ea, nisi natus, provident eaque. Eum odit impedit harum quia, laborum ipsa tenetur error sit, illo labore atque! Enim.</p>
+						</div>
+					</div>
+					<div class="d-flex ml-3">
+						<a href="#">
+							<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+						</a>
+						<div>
+							<a href="#">Emanuel Honorio</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nemo saepe ea, nisi natus, provident eaque. Eum odit impedit harum quia, laborum ipsa tenetur error sit, illo labore atque! Enim.</p>
+						</div>
+					</div>
+				</div>
+				<!--.// RESPOSTAS -->
+				<!-- POST MY COMMENT -->
+				<div class="container post-comment hidden">
+					<div class="d-flex ml-3">
+						<a href="#">
+							<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+						</a>
+
+						<form action="comentarios/responder/1" method="POST" class="col-sm-8 pl-0">
+							<textarea class="form-control" placeholder="mensagem..."></textarea>
+
+							<div class="mt-1">
+								<button type="submit" class="btn btn-default">Enviar</button>
+								<button type="button" class="btn btn-default btn-cancelar-resposta">Cancelar</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+				<!--.// POST MY COMMENT -->
+			</div>
+		</div>
+		<!--.// COMMMENT -->
+		<!-- COMMMENT -->
+		<div class="d-flex my-5">
 			<a href="#">
 				<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
 			</a>
 			<div>
 				<a href="#">Emanuel Honorio</a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, sapiente!</p>
-				<div class="container-responder">
-					<a href="#" class="btn-responder">Responder</a>
+				<p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nemo saepe ea, nisi natus, provident eaque. Eum odit impedit harum quia, laborum ipsa tenetur error sit, illo labore atque! Enim.</p>
+				<a href="#" class="btn-responder">Responder</a>
+				<div class="my-2 btn-view-more-comments">
+					<a href="#"><span>Mostrar todas as respostas</span> <i class="fas fa-caret-down"></i></a>
 				</div>
+				
+				<!-- RESPOSTAS -->
+				<div class="container container-respostas hidden">
+	
+					<div class="d-flex ml-3">
+						<a href="#">
+							<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+						</a>
+						<div>
+							<a href="#">Emanuel Honorio</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nemo saepe ea, nisi natus, provident eaque. Eum odit impedit harum quia, laborum ipsa tenetur error sit, illo labore atque! Enim.</p>
+						</div>
+					</div>
+					<div class="d-flex ml-3">
+						<a href="#">
+							<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+						</a>
+						<div>
+							<a href="#">Emanuel Honorio</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nemo saepe ea, nisi natus, provident eaque. Eum odit impedit harum quia, laborum ipsa tenetur error sit, illo labore atque! Enim.</p>
+						</div>
+					</div>
+				</div>
+				<!--.// RESPOSTAS -->
+				<!-- POST MY COMMENT -->
+				<div class="container post-comment hidden">
+					<div class="d-flex ml-3">
+						<a href="#">
+							<img src="avatar-1.jpg" class="avatar mr-2" alt="avatar" />
+						</a>
+
+						<form action="comentarios/responder/1" method="POST" class="col-sm-8 pl-0">
+							<textarea class="form-control" placeholder="mensagem..."></textarea>
+
+							<div class="mt-1">
+								<button type="submit" class="btn btn-default">Enviar</button>
+								<button type="button" class="btn btn-default btn-cancelar-resposta">Cancelar</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+				<!--.// POST MY COMMENT -->
 			</div>
 		</div>
+		<!--.// COMMMENT -->
 		
 		
-		
+			
  	</section>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="handlebars.min.js"></script>
+    
+	<script id="script-responder" type="text/x-handlebars-template">
+		<form action="/comentarios/responder/1" method="POST">
+			<textarea class="form-control"></textarea>
+			<button class="btn-btn-primary">Enviar</button>
+		</form>
+	</script>
     
     <script>
 	 	
 		$(function(){
-			var containerResponder = $(".container-responder");
-			var btnResponder = containerResponder.find(".btn-responder");
-			var htmlContainerReponder = containerResponder.html();
-			var form='<form action="/comentarios/responder/1" method="post"></form>';
 			
-			var htmlTextArea = '<textarea class="form-control" placeholder="mensagem..."></textarea>';
-			var htmlBtns = '<a href="#">Enviar</a> <a href="#">Cancelar</a>';
-			btnResponder.on('click', function(){
-				btnResponder.addClass('hidden');
-				containerResponder.append(htmlTextArea);
-				containerResponder.append(htmlBtns);
+			var containerRespostas = $('.container-respostas');
+			var containerPostComment = $('.post-comment');
+			var btnResponder = $('.btn-responder');
+			var btnCancelar = $('.btn-cancelar-resposta');
+			
+			$(btnResponder).click(function(){
+				containerPostComment.addClass('hidden');
+				btnResponder.removeClass('hidden');
+				$(this).addClass('hidden');
+				$(this).parent().find(containerPostComment).removeClass('hidden');
+				
+				$(btnCancelar).click(function(){
+					$(this).closest(containerPostComment).addClass('hidden');
+					btnResponder.removeClass('hidden');
+					
+				});
 			});
+			
+			var btnViewMoreCommments = $('.btn-view-more-comments');
+			
+			btnViewMoreCommments.click(function(){
+				var link = $(this).find('a');
+				var icon =  $(this).find('i');
+				var linkText = link.find('span');
+				
+				if(icon.hasClass('fa-caret-down')){ // Quando clicar para Mostrar Respostas
+					icon.removeClass('fa-caret-down');
+					icon.addClass('fa-caret-up');
+					linkText.text('Ocultar comentários');
+					$(this).parent().find(containerRespostas).removeClass('hidden');
+				} 
+				else {	// Quando clicar para Ocultar Respostas
+					icon.removeClass('fa-caret-up');
+					icon.addClass('fa-caret-down');
+					linkText.text('Mostrar todas as respostas');
+					$(this).parent().find(containerRespostas).addClass('hidden');
+				}
+				
+			});
+			
 		});
 	  
 	 </script>

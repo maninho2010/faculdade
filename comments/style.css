@@ -7,3 +7,9 @@
 .hidden{
 	display: none;
 }
+
+.nome-autor{
+	color: #333;
+	font-weight: 600;
+	
+}
